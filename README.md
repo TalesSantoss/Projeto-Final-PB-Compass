@@ -36,6 +36,7 @@
 * Qual o diagrama da infraestrutura na AWS?
 
 * Como serão garantidos os requisitos de Segurança?
+1. Colocar os servidores de RDS e EC2 em sub-redes e grupos de segurança adequados
 
 * Como será realizado o processo de Backup?
 1. Com o uso do mysqldump para reproduzir o conteudo do banco de dados original
