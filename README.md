@@ -23,6 +23,7 @@
 5. Utilizar o DMS para analizar o banco de dados e fazer a migração para o RDS
 6. Instalar replication agents nos servidores de frontend e backend e com o MGN replica-los em instâncias de mesma capacidade nas subredes adequadas(t2.small e t4g.medium respectivamente)
 7. Criar medidas de monitoramento nas Instãncias EC2 e RDS
+8. Utilizar o Route 53 para registrar o dominio da aplicação web e disponibilizá-lo na internet
    
 * Quais as ferramentas vão ser utilizadas?
 1. Virtual Private Cloud(VPC)
@@ -34,6 +35,7 @@
 7. AWS Identity and Acess Manager (IAM)
 8. Amazon CloudWatch
 9. AWS Secrets Manager
+10. Route 53
 
 * Qual o diagrama da infraestrutura na AWS?
 ![image](https://github.com/user-attachments/assets/61db4954-9e2a-4f6e-ac58-befddd0d4636)
