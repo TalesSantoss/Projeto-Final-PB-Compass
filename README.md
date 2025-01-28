@@ -1,54 +1,37 @@
 # Projeto-Final-PB-Compass
+## Integrantes:
+Tales Santos de Souza
+
+Kevin Alencar Costa
+# Objetivo
+Criar um diagrama que represente uma migração "lift-and-shift" de uma arquitetura "On-Premise" para a cloud AWS e realizar a modernização da mesma utilizando Kubernetes:
 # Situação Atual:
+"Nós somos da empresa "Fast Engineering S/A" e gostaríamos de uma solução dos senhores(as), que fazem parte da empresa terceira "TI SOLUÇÕES INCRÍVEIS".
+Nosso eCommerce está crescendo e a solução atual não está atendendo mais a alta demanda de acessos e compras que estamos tendo.
+Atualmente usamos:
 * Banco de Dados MySQL: 500 GB, 10 GB RAM, 3 Core CPU.
 * Servidor de Aplicação (React): 5 GB, 2 GB RAM, 1 Core CPU.
 * Backend com 3 APIs e NGINX: 5 GB, 4 GB RAM, 2 Core CPU.
 ![image](https://github.com/user-attachments/assets/b6dd2030-d478-467f-96e3-9d6c277638a3)
-
-# Objetivos:
+Queremos modernizar esse sistema para a AWS, precisamos seguir as melhores práticas arquitetura em Cloud AWS, a nova arquitetura deve seguir as seguintes diretrizes:
 * Ambiente Kubernetes;
 * Banco de dados gerenciado (Paas e Multi AZ);
 * Backup de dados;
 * Sistema para persistência de objetos (imagens, vídeos etc.);
 * Segurança;
-
-# Perguntas a serem respondidas na apresentação
-
-## Primeira Etapa(As-is):
-* Quais atividades são necessárias para a migração?
-1. Criar uma conta IAM com as permissões necessárias
-2. Criar uma VPC com subredes e grupos de seguranças adequados na região us-east-1(Norte da Vírginia)
-3. Criar um banco de dados RDS MySQL com a mesma capacidade ou superior do original(db.m5.xlarge)
-4. Criar um backup local de cada servidor on-premise
-5. Utilizar o DMS para analizar o banco de dados e fazer a migração para o RDS
-6. Instalar replication agents nos servidores de frontend e backend e com o MGN replica-los em instâncias de mesma capacidade nas subredes adequadas(t2.small e t4g.medium respectivamente)
-7. Criar medidas de monitoramento nas Instãncias EC2 e RDS
-8. Utilizar o Route 53 para registrar o dominio da aplicação web e disponibilizá-lo na internet
-   
-* Quais as ferramentas vão ser utilizadas?
-1. Virtual Private Cloud(VPC)
-2. Database Migration Service(DMS);
-3. Relational Database Service(RDS)
-4. Application Migration Service
-5. Elastic Cloud Compute(EC2);
-6. Elastic Block Storage
-7. AWS Identity and Acess Manager (IAM)
-8. Amazon CloudWatch
-9. AWS Secrets Manager
-10. Route 53
-
+Porém antes da migração acontecer para a nova estrutura, precisamos fazer uma migração "lift-and-shift" ou "as-is", o mais rápido possível, só depois que iremos promover a modificação para a nova estrutura em Kubernetes"
+#Desenvolvimento
+## Primeira Etapa(Lift-and-Shift):
+Para realizar a migração, realizaremos os seguintes passos:
+1. Criar uma VPC na AWS com uma subrede pública e com dus subredes privadas
+2. Criar um Banco RDS na subrede privada
+3. Utilizar o AWS DMS(Databse Migration Service) para migrar o banco de dados Mysql para um banco de dados RDS 
+4. Usar AWS MGN(Application Migration Service) para fazer a migração dos servidores da aplicação para instâncias EC2 de mesma capacidade e com EBS(Elastic Block Storage)por meio de replication agents
+3. 
 * Qual o diagrama da infraestrutura na AWS?
-![image](https://github.com/user-attachments/assets/61db4954-9e2a-4f6e-ac58-befddd0d4636)
+![image](https://github.com/user-attachments/assets/05abee3d-9750-40bc-8e04-3731980f4e58)
 
-* Como serão garantidos os requisitos de Segurança?
-1. Colocar os servidores de RDS e EC2 em sub-redes e grupos de segurança adequados
-2. Utilizar o Secrets Manager para armazenar dados sensíveis
-3. Utilizar o CLoudWatch para verificar o funcionamento da estrutura
 
-* Como será realizado o processo de Backup?
-1. Com o uso de um backup local antes da migração
-2. O uso de backups automáticos no banco de dados
-3. O uso de snapshots para instâncias EC2
 
 * Qual o custo da infraestrutura na AWS (AWS Calculator)?
 1. Amazon RDS: 167,01 USD(Primeiras 12 horas para passar os dados), 658,12 USD(Mês inteiro)
