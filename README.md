@@ -4,7 +4,7 @@ Tales Santos de Souza
 
 Kevin Alencar Costa
 # Objetivo
-Criar um diagrama que represente uma migração "lift-and-shift" de uma arquitetura "On-Premise" para a cloud AWS e realizar a modernização da mesma utilizando Kubernetes:
+Criar diagramas que representem uma migração "lift-and-shift" de uma arquitetura "On-Premise" para a cloud AWS e realizar a modernização da mesma utilizando Kubernetes:
 # Situação Atual:
 "Nós somos da empresa "Fast Engineering S/A" e gostaríamos de uma solução dos senhores(as), que fazem parte da empresa terceira "TI SOLUÇÕES INCRÍVEIS".
 Nosso eCommerce está crescendo e a solução atual não está atendendo mais a alta demanda de acessos e compras que estamos tendo.
@@ -33,6 +33,7 @@ Para realizar a migração, realizaremos os seguintes passos;
 8. Utilizar o AWS Secrets Manager para Armazenar dados sensíveis;
 * Qual o diagrama da infraestrutura na AWS?
 ![image](https://github.com/user-attachments/assets/8e0867d7-7a6a-4dcc-814a-80a75c043356)
+<p align="center">Diagrama da Primeira Etapa</p>
 
 * Qual o custo da infraestrutura na AWS (AWS Calculator)?
 1. Amazon RDS: 167,01 USD(Primeiras 12 horas para passar os dados), 658,12 USD(Mês inteiro)
@@ -42,9 +43,13 @@ Para realizar a migração, realizaremos os seguintes passos;
 5. DMS:120,70 USD
 6. Route 53: 75,50 USD
 7. Custo da migração(12 horas):364,07 USD (https://calculator.aws/#/estimate?id=5fa05984894895b8833e9c443f3858cf8a381a96)
+
 ![image](https://github.com/user-attachments/assets/aca50526-6734-47e0-8e50-265979385779)
-8. Custo do mês inteiro:904,64 USD (https://calculator.aws/#/estimate?id=e83b7c8eabd281482647bea31d7d4c1203ff75be)
-![image](https://github.com/user-attachments/assets/7bc7c499-00e8-40d2-a37a-b76fa691a6cb)
+<p align="center">Custo da migração(12 horas)</p>
+9. Custo do mês inteiro:904,64 USD (https://calculator.aws/#/estimate?id=e83b7c8eabd281482647bea31d7d4c1203ff75be)
+
+![image](https://github.com/user-attachments/assets/7bc7c499-00e8-40d2-a37a-b76fa691a6cb) 
+<p align="center">Custo do mês inteiro</p>
 
 ## Segunda Etapa(Modernização/Kubernetes:
 * Quais atividades são necessárias para a modernização?
@@ -56,6 +61,8 @@ Para realizar a migração, realizaremos os seguintes passos;
 6. Utilizar AWS WAF para proteger a arquitetura de acessos suspeitos;
 * Qual o diagrama da infraestrutura na AWS?
 * ![image](https://github.com/user-attachments/assets/f4476b4e-dcf1-4820-bb99-015cb2639f75)
+  <p align="center">Diagrama da Segunda Etapa</p>
+  
 
 * Qual o custo da infraestrutura na AWS (AWS Calculator)?
 1. Amazon EKS:73,00 USD
@@ -68,4 +75,5 @@ Para realizar a migração, realizaremos os seguintes passos;
 8. AWS WAF:300,00 USD
 9. Custo total:2629,41 USD
 ![image](https://github.com/user-attachments/assets/03ae6ed2-57f9-48aa-9a22-604c0e8faee6)
+<p align="center">Custo total</p>
 
