@@ -42,9 +42,12 @@ Para realizar a migração, realizaremos os seguintes passos:
 5. DMS:120,70 USD
 6. Route 53: 75,50 USD
 7. Custo da migração(12 horas):364,07 USD (https://calculator.aws/#/estimate?id=5fa05984894895b8833e9c443f3858cf8a381a96)
+![image](https://github.com/user-attachments/assets/aca50526-6734-47e0-8e50-265979385779)
 8. Custo do mês inteiro:904,64 USD (https://calculator.aws/#/estimate?id=e83b7c8eabd281482647bea31d7d4c1203ff75be)
+![image](https://github.com/user-attachments/assets/7bc7c499-00e8-40d2-a37a-b76fa691a6cb)
+
 ## Segunda Etapa(Modernização/Kubernetes:
-* Quais atividades são necessárias para a migração?
+* Quais atividades são necessárias para a modernização?
 * Quais as ferramentas vão ser utilizadas?
 * Qual o diagrama da infraestrutura na AWS?
 * Como serão garantidos os requisitos de Segurança?
