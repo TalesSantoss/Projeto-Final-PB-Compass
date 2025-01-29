@@ -22,15 +22,15 @@ Queremos modernizar esse sistema para a AWS, precisamos seguir as melhores prát
 Porém antes da migração acontecer para a nova estrutura, precisamos fazer uma migração "lift-and-shift" ou "as-is", o mais rápido possível, só depois que iremos promover a modificação para a nova estrutura em Kubernetes"
 #Desenvolvimento
 ## Primeira Etapa(Lift-and-Shift):
-Para realizar a migração, realizaremos os seguintes passos:
-1. Criar uma VPC na AWS com uma subrede pública e com dus subredes privadas
-2. Criar um Banco RDS na subrede privada
-3. Utilizar o AWS DMS(Databse Migration Service) para migrar o banco de dados Mysql para um banco de dados RDS 
-4. Usar AWS MGN(Application Migration Service) para fazer a migração dos servidores da aplicação para instâncias EC2 de mesma capacidade e com EBS(Elastic Block Storage)por meio de replication agents
-5. Utilizar o route 53 para disponibilizar um endereço DNS atrelado ao frontend
-6. Utilizar o IAM para gerenciar permissões
-7. Utilizar o cloudwatch para verificar a integridade da arquitetura
-8. Utilizar o AWS Secrets Manager para Armazenar dados sensíveis
+Para realizar a migração, realizaremos os seguintes passos;
+1. Criar uma VPC na AWS com uma subrede pública e com duas subredes privadas;
+2. Criar um Banco RDS na subrede privada;
+3. Utilizar o AWS DMS(Databse Migration Service) para migrar o banco de dados Mysql para um banco de dados RDS;
+4. Usar AWS MGN(Application Migration Service) para fazer a migração dos servidores da aplicação para instâncias EC2 de mesma capacidade e com EBS(Elastic Block Storage)por meio de replication agents;
+5. Utilizar o route 53 para disponibilizar um endereço DNS atrelado ao frontend;
+6. Utilizar o IAM para gerenciar permissões;
+7. Utilizar o cloudwatch para verificar a integridade da arquitetura;
+8. Utilizar o AWS Secrets Manager para Armazenar dados sensíveis;
 * Qual o diagrama da infraestrutura na AWS?
 ![image](https://github.com/user-attachments/assets/8e0867d7-7a6a-4dcc-814a-80a75c043356)
 
@@ -48,14 +48,23 @@ Para realizar a migração, realizaremos os seguintes passos:
 
 ## Segunda Etapa(Modernização/Kubernetes:
 * Quais atividades são necessárias para a modernização?
-1. Utilizar Git e GitLab para atomatizar o processo de desenvolvimento para o time de devs
-2. Utilizar o CloudFormation para criar um cluster EKS(Elastic Kubernetes Service) por meio de código com pods para cada instância EC2 com imagens dockers puxadas do  ECR(Elastic Container Registry)
-3. Utilizar grupos de auto scaling para  criar novos pods de backend baseados em métricas do cloudwatch
-4. Utilizar Load Balancer para acessar a zona com melhor disponibilidade
-5. Utilizar Cloudfront para disponibilizar estáticos globalmente
-6. Utilizar AWS WAF para proteger a arquitetura de acessos suspeitos
+1. Utilizar Git e GitLab para atomatizar o processo de desenvolvimento para o time de devs;
+2. Utilizar o CloudFormation para criar um cluster EKS(Elastic Kubernetes Service) por meio de código com pods para cada instância EC2 com imagens dockers puxadas do  ECR(Elastic Container Registry);
+3. Utilizar grupos de auto scaling para  criar novos pods de backend baseados em métricas do cloudwatch;
+4. Utilizar Load Balancer para acessar a zona com melhor disponibilidade;
+5. Utilizar Cloudfront para disponibilizar estáticos globalmente;
+6. Utilizar AWS WAF para proteger a arquitetura de acessos suspeitos;
 * Qual o diagrama da infraestrutura na AWS?
 * ![image](https://github.com/user-attachments/assets/f4476b4e-dcf1-4820-bb99-015cb2639f75)
 
 * Qual o custo da infraestrutura na AWS (AWS Calculator)?
+1. Amazon EKS:73,00 USD
+2. AWS CloudFormation:26,10 USD
+3. AWS Clodfront:44,22 USD
+4. Amazon Elastic Container Registry: 3,00 USD
+5. RDS:1974,36 USD
+6. Elastic Load Balancer:133,23 USD
+7. Route 53:75,50 USD
+8. AWS WAF:300,00 USD
+![image](https://github.com/user-attachments/assets/03ae6ed2-57f9-48aa-9a22-604c0e8faee6)
 
