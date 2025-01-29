@@ -27,11 +27,12 @@ Para realizar a migração, realizaremos os seguintes passos:
 2. Criar um Banco RDS na subrede privada
 3. Utilizar o AWS DMS(Databse Migration Service) para migrar o banco de dados Mysql para um banco de dados RDS 
 4. Usar AWS MGN(Application Migration Service) para fazer a migração dos servidores da aplicação para instâncias EC2 de mesma capacidade e com EBS(Elastic Block Storage)por meio de replication agents
-3. 
+5. Utilizar o route 53 para disponibilizar um endereço DNS atrelado ao frontend
+6. Utilizar o IAM para gerenciar permissões
+7. Utilizar o cloudwatch para verificar a integridade da arquitetura
+8. Utilizar o AWS Secrets Manager para Armazenar dados sensíveis
 * Qual o diagrama da infraestrutura na AWS?
-![image](https://github.com/user-attachments/assets/05abee3d-9750-40bc-8e04-3731980f4e58)
-
-
+![image](https://github.com/user-attachments/assets/8e0867d7-7a6a-4dcc-814a-80a75c043356)
 
 * Qual o custo da infraestrutura na AWS (AWS Calculator)?
 1. Amazon RDS: 167,01 USD(Primeiras 12 horas para passar os dados), 658,12 USD(Mês inteiro)
