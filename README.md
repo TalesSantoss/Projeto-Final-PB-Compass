@@ -40,8 +40,9 @@ Para realizar a migração, realizaremos os seguintes passos:
 3. EC2(Backend) com EBS: 0,49 USD(Primeiras 12 horas), 29,03 USD(Mês inteiro)
 4. MGN:0,00 USD
 5. DMS:120,70 USD
-6. Custo da migração(12 horas):288,57 USD (https://calculator.aws/#/estimate?id=99d48df01f751281a647ef2138aa55af1095592a)
-7. Custo do mês inteiro:829,14 USD (https://calculator.aws/#/estimate?id=eaf0b4890ec3fd82d8b75f98e26a6fe9cf51f86c)
+6. Route 53: 75,50
+7. Custo da migração(12 horas):364,07 USD (https://calculator.aws/#/estimate?id=5fa05984894895b8833e9c443f3858cf8a381a96)
+8. Custo do mês inteiro:829,14 USD (https://calculator.aws/#/estimate?id=eaf0b4890ec3fd82d8b75f98e26a6fe9cf51f86c)
 ## Segunda Etapa(Modernização/Kubernetes:
 * Quais atividades são necessárias para a migração?
 * Quais as ferramentas vão ser utilizadas?
