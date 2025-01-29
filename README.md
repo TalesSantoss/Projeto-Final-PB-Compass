@@ -48,8 +48,14 @@ Para realizar a migração, realizaremos os seguintes passos:
 
 ## Segunda Etapa(Modernização/Kubernetes:
 * Quais atividades são necessárias para a modernização?
-* Quais as ferramentas vão ser utilizadas?
+1. Utilizar Git e GitLab para atomatizar o processo de desenvolvimento para o time de devs
+2. Utilizar o CloudFormation para criar um cluster EKS(Elastic Kubernetes Service) por meio de código com pods para cada instância EC2 com imagens dockers puxadas do  ECR(Elastic Container Registry)
+3. Utilizar grupos de auto scaling para  criar novos pods de backend baseados em métricas do cloudwatch
+4. Utilizar Load Balancer para acessar a zona com melhor disponibilidade
+5. Utilizar Cloudfront para disponibilizar estáticos globalmente
+6. Utilizar AWS WAF para proteger a arquitetura de acessos suspeitos
 * Qual o diagrama da infraestrutura na AWS?
-* Como serão garantidos os requisitos de Segurança?
-* Como será realizado o processo de Backup?
+* ![image](https://github.com/user-attachments/assets/f4476b4e-dcf1-4820-bb99-015cb2639f75)
+
 * Qual o custo da infraestrutura na AWS (AWS Calculator)?
+
