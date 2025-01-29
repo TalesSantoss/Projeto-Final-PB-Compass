@@ -66,5 +66,6 @@ Para realizar a migração, realizaremos os seguintes passos;
 6. Elastic Load Balancer:133,23 USD
 7. Route 53:75,50 USD
 8. AWS WAF:300,00 USD
+9. Custo total:2629,41 USD
 ![image](https://github.com/user-attachments/assets/03ae6ed2-57f9-48aa-9a22-604c0e8faee6)
 
